@@ -25,21 +25,9 @@ class TodoListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //print(dataFilePath)
+        
         //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-        //loadItems()
-        
-        //let newItem = Item()
-        //newItem.title = "Find Mike"
-        //newItem.done = true
-        //itemArray.append(newItem)
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        //if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
-        //   itemArray = items
-        //}
+       
     }
     // MARK - Tableview Datasource Methods
     
@@ -64,11 +52,6 @@ class TodoListViewController: UITableViewController {
         // value = condition ? valueIfTrue : valueIfFalse
         
         cell.accessoryType = item.done ? .checkmark : .none
-        //if item.done == true {
-        //    cell.accessoryType = .checkmark
-        //} else {
-        //    cell.accessoryType = .none
-        //}
         
         return cell
 
@@ -78,21 +61,10 @@ class TodoListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //print(itemArray[indexPath.row])
-        //context.delete(itemArray[indexPath.row])
-        //itemArray.remove(at: indexPath.row)
-        
         
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
         saveItems()
-        
-        //if itemArray[indexPath.row].done == false {
-        //   itemArray[indexPath.row].done = true
-        //} else {
-        //    itemArray[indexPath.row].done = false
-        //}
-
-        //tableView.reloadData()
         
         tableView.deselectRow(at: indexPath, animated:true)
         
@@ -156,10 +128,7 @@ class TodoListViewController: UITableViewController {
         } else {
             request.predicate = categoryPredicate
         }
-        //let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, predicate])
         
-        //request.predicate = compoundPredicate
-            
         do {
          itemArray = try context.fetch(request)
         } catch {
