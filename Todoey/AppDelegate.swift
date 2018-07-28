@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import RealmSwift
+import SwipeCellKit
+import ChameleonFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

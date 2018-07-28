@@ -11,7 +11,7 @@ import RealmSwift
 
 class Category: Object {
     @objc dynamic var name: String = ""
-    
+    @objc dynamic var colour: String = ""
     // create array List is equivalent to array with RealmSwift
     let items = List<Item>()
     
